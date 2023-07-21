@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <!-- {{!-- {{>navbar}} --}} -->
+    <!-- {{!-- {{>navbar}} --}}      -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     {{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -64,6 +64,35 @@
         <p>created by Dishant Bisht</p>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+
+        const day=document.getElementById('day');
+        const getCurrentDay= () => {
+            let weekday = new Array(7);
+            weekday[0]="Sunday";
+            weekday[1]="Monday";
+            weekday[2]="Tuesday";
+            weekday[3]="Wednesday";
+            weekday[4]="Thursday";
+            weekday[5]="Friday";
+            weekday[6]="Saturday";
+
+            let currentTime = new Date();
+            console.log(weekday[currentTime.getDay()]);
+            let Day=weekday[currentTime.getDay()];
+            day.innertext = Day;
+
+        };
+        const getCurrentTime = () =>{
+            var now = new Date();
+            var month= now.getMonth()+1;
+            var day= now.getDate();
+            var year=now.getFullYear();
+        }
+
+        getCurrentDay();
+
+    </script>
 
 </body>
 

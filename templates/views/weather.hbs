@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <title>Hello, world!</title>
+    <title>DishantWeather</title>
 
 </head>
 
@@ -44,8 +44,9 @@
                 </div>
                 <div class="tempInformation">
                     <div class="top_layer">
-                        <p id="day">Tuesday</p>
-                        <p id="today_data">13 OCT</p>
+                        <p id="day">sorry</p>
+                        <p id="today_date">sorry</p>
+                        <p id="month">sorry</p>
                     </div>
                     <div class="main_layer">
                         <p id="city_name">Get output</p>
@@ -61,9 +62,69 @@
 
     </div>
     <footer>
-        <p>created by Dishant Bisht</p>
+        <p>Developed by Dishant Bisht</p>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+
+        const day=document.getElementById('day');
+        const today_date=document.getElementById('today_date')
+        const month=document.getElementById('month');
+        const getCurrentDay= () => {
+            let weekday = new Array(7);
+            weekday[0]="Sunday";
+            weekday[1]="Monday";
+            weekday[2]="Tuesday";
+            weekday[3]="Wednesday";
+            weekday[4]="Thursday";
+            weekday[5]="Friday";
+            weekday[6]="Saturday";
+
+            let currentTime = new Date();
+            console.log(weekday[currentTime.getDay()]);
+            let Day=weekday[currentTime.getDay()];
+            day.innerText = Day;
+
+        };
+        const getCurrentDate = () =>{
+            var now = new Date();
+            
+            var date= now.getDate();
+            console.log(date);
+            today_date.innerText=date;
+            
+            
+        }
+
+        const getCurrentMonth = () =>{
+            var current_month = new Date();
+            const months = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+                ];
+
+                var monthly=current_month.getMonth();
+                console.log(month)
+                var pt_month=months[monthly];
+                month.innerText=pt_month;
+
+        }
+
+        getCurrentDay();
+        getCurrentDate();
+        getCurrentMonth();
+
+    </script>
 
 </body>
 
